@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/ThasidaranKanasen/pwa-test/issues"
   },
-  "homepage": "https://ThasidaranKanasen.github.io/pwa-test",
+  "homepage": "https://thasidarankanasen.github.io/pwa-test",
   "dependencies": {
     "gh-pages": "^2.0.1"
   }
