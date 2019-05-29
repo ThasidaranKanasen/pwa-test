@@ -21,5 +21,6 @@ debug.log
 .vs/VSWorkspaceState.json
 .vs/ECUC/v15/.suo
 .vs/slnx.sqlite
+.config
 
 .idea
