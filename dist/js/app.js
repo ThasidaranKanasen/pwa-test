@@ -17,7 +17,7 @@ const app = {
     async function installServiceWorkerAsync() {
         if ('serviceWorker' in navigator) {
             try {
-                let serviceWorker = await navigator.serviceWorker.register('./sw.js')
+                let serviceWorker = await navigator.serviceWorker.register('./service-worker.js')
                 console.log(`Service worker registered ${serviceWorker}`)
             } catch (err) {
                 console.error(`Failed to register service worker: ${err}`)

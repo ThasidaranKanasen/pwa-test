@@ -21,7 +21,7 @@
 const CACHE_NAME = 'cache-v1';
 // CODELAB: Add list of files to cache here.
 const FILES_TO_CACHE = [
-  '/pwa-test',
+  '/',
   '/index.html',
   '/img/horse.svg',
   '/css/main.css',
