@@ -1,16 +1,51 @@
-const CACHE_NAME = "V2"
+const cacheName = 'cache-v1';
 
-/**
- * The install event is fired when the registration succeeds.
- * After the install step, the browser tries to activate the service worker.
- * Generally, we cache static resources that allow the website to run offline
- */
-this.addEventListener('install', async function() {
-    const cache = await caches.open(CACHE_NAME);
-    cache.addAll([
-        'index.html',
-        'css/main.css',
-        'js/main.js',
-        'img/horse.svg'
-    ])
-})
+const staticAssets = [
+    './',
+    '/index.html',
+    '/img/horse.svg',
+    '/css/main.css',
+    '/js/app.js',
+    '/manifest.json'
+
+  ];
+
+  self.addEventListener('install', async e => {
+    const cache = await caches.open(cacheName);
+    await cache.addAll(staticAssets);
+    return self.skipWaiting();
+  });
+  
+  self.addEventListener('activate', e => {
+    self.clients.claim();
+  });
+
+  self.addEventListener('fetch', async e => {
+    const req = e.request;
+    const url = new URL(req.url);
+  
+    if (url.origin === location.origin) {
+      e.respondWith(cacheFirst(req));
+    } else {
+      e.respondWith(networkAndCache(req));
+    }
+  });
+  
+  async function cacheFirst(req) {
+    const cache = await caches.open(cacheName);
+    const cached = await cache.match(req);
+    return cached || fetch(req);
+  }
+  
+  async function networkAndCache(req) {
+    const cache = await caches.open(cacheName);
+    try {
+      const fresh = await fetch(req);
+      await cache.put(req, fresh.clone());
+      return fresh;
+    } catch (e) {
+      const cached = await cache.match(req);
+      return cached;
+    }
+  }
+  

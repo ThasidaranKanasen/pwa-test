@@ -27,6 +27,17 @@ const app = {
 
     installServiceWorkerAsync();
 
+    function updateOnlineStatus() {
+        document.getElementById('status').innerText = 'Online';
+      }
+      
+      function updateOfflineStatus() {
+        document.getElementById('status').innerText = 'Offline';
+      }
+      
+      window.addEventListener('online',  updateOnlineStatus);
+      window.addEventListener('offline', updateOfflineStatus);
+
     },
 
     firebase : function(){
