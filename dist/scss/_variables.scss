@@ -1,0 +1,82 @@
+/* Colors */
+$sky-blue: rgba(96, 15, 215, 1);
+$purple-blue: rgba(54, 0, 122, 1);
+$dark: rgba(22, 25, 37, 1);
+$light: rgba(225, 214, 240, 1);
+$ocean-blue: rgba(102, 1, 254, 1);
+$sunshine : rgba(#FFC914, 1);
+
+$white : rgba(#fff, 1);
+$black : rgba(#000, 1);
+
+/* Grid Settings */
+
+// Responsive Breakpoints
+$breakpoint-m:  768px !default;
+$breakpoint-l:  980px !default;
+$breakpoint-xl: 1200px !default;
+
+
+$grid-gutter: 15px;
+
+$container-m: ($breakpoint-m - 20);
+$container-l: ($breakpoint-l - 20);
+$container-xl: ($breakpoint-xl - 20);
+
+$grid-alignment: left;
+
+
+/* Typography */
+
+// Global Typography
+$base-background-color:                         #fff !default;
+$base-font-family:                              'Prompt', sans-serif !default;
+$base-font-size:                                16px !default;
+$base-line-height:                              22px !default;
+$base-font-weight:                              400 !default;
+$base-font-color:                               $dark !default;
+$base-link-color:                               $dark !default;
+$base-link-hover-color:                         $dark !default;
+$base-link-active-color:                        $dark !default;
+
+// Headings
+$base-heading-font-family:                      'Prompt', sans-serif !default;
+$base-h1-font-size:                             32px !default;
+$base-h1-line-height:                           38px !default;
+$base-h1-font-weight:                           900 !default;
+$base-h1-color:                                 $dark !default;
+$base-h2-font-size:                             26px !default;
+$base-h2-line-height:                           32px !default;
+$base-h2-font-weight:                           900 !default;
+$base-h2-color:                                 $dark !default;
+$base-h3-font-size:                             22px !default;
+$base-h3-line-height:                           28px !default;
+$base-h3-font-weight:                           900 !default;
+$base-h3-color:                                 $dark !default;
+$base-h4-font-size:                             18px !default;
+$base-h4-line-height:                           24px !default;
+$base-h4-font-weight:                           700 !default;
+$base-h4-color:                                 $dark !default;
+$base-h5-font-size:                             16px !default;
+$base-h5-line-height:                           22px !default;
+$base-h5-font-weight:                           700 !default;
+$base-h5-color:                                 $dark !default;
+$base-h6-font-size:                             14px !default;
+$base-h6-line-height:                           20px !default;
+$base-h6-font-weight:                           700 !default;
+$base-h6-color:                                 $dark !default;
+
+// Blockquotes
+$base-blockquote-font-family:                   'Prompt', sans-serif !default;
+$base-blockquote-font-size:                     18px !default;
+$base-blockquote-line-height:                   24px !default;
+$base-blockquote-font-weight:                   400 !default;
+$base-blockquote-cite-font-weight:              700 !default;
+
+// Code
+$base-code-font-family:                         monospace, monospace !default;
+$base-code-font-size:                           13px !default;
+$base-code-line-height:                         18px !default;
+$base-code-color:                               $dark !default;
+$base-code-background-color:                    $light !default;
+$base-code-border-color:                        $sky-blue !default;

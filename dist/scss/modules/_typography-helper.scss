@@ -1,0 +1,58 @@
+// ==========================================================================
+// Base Typography Helpers
+// ==========================================================================
+
+// Font Weights
+.font-400 { font-weight: 400; }
+.font-700 { font-weight: 700; }
+.font-900 { font-weight: 900; }
+
+
+.font-sky-blue{color:$sky-blue};
+.font-purple-blue{color:$purple-blue};
+.font-dark{color:$dark};
+.font-light{color:$light};
+.font-ocean-blue{color:$ocean-blue};
+.font-sunshine{color:$sunshine};
+.font-white {color:$white};
+.font-black {color:$black};
+
+// No Selection
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+// Text Modifications
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+// Text Alignments
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+@include breakpoint(m) {
+  // Text Alignments - Tablet
+  .text-left-m { text-align: left; }
+  .text-right-m { text-align: right; }
+  .text-center-m { text-align: center; }
+}
+
+@include breakpoint(l) {
+  // Text Alignments - Tablet
+  .text-left-l { text-align: left; }
+  .text-right-l { text-align: right; }
+  .text-center-l { text-align: center; }
+}
+
+@include breakpoint(xl) {
+  // Text Alignments - Tablet
+  .text-left-xl { text-align: left; }
+  .text-right-xl { text-align: right; }
+  .text-center-xl { text-align: center; }
+}

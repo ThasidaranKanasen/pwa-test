@@ -1,0 +1,135 @@
+// Body
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $base-font-color;
+    font-weight: $base-font-weight;
+    background: $base-background-color;
+  }
+  
+  // Paragraph
+  p { margin: 0 0 20px 0; }
+  
+  // Links
+  a {
+    color: $base-link-color;
+    text-decoration: underline;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    &:hover {
+      color: $base-link-hover-color;
+      outline-width: 0;
+      text-decoration: none;
+    }
+    &:active {
+      color: $base-link-active-color;
+    }
+  }
+  
+  // Headings
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $base-heading-font-family;
+    margin: 0 0 .5em 0;
+  }
+  h1, .fs-1 {
+    font-size: $base-h1-font-size;
+    line-height: $base-h1-line-height;
+  }
+  h2, .fs-2 {
+    font-size: $base-h2-font-size;
+    line-height: $base-h2-line-height;
+  }
+  h3, .fs-3 {
+    font-size: $base-h3-font-size;
+    line-height: $base-h3-line-height;
+  }
+  h4, .fs-4 {
+    font-size: $base-h4-font-size;
+    line-height: $base-h4-line-height;
+  }
+  h5, .fs-5 {
+    font-size: $base-h5-font-size;
+    line-height: $base-h5-line-height;
+  }
+  h6, .fs-6 {
+    font-size: $base-h6-font-size;
+    line-height: $base-h6-line-height;
+  }
+  h1 {
+    color: $base-h1-color;
+    font-weight: $base-h1-font-weight;
+  }
+  h2 {
+    color: $base-h2-color;
+    font-weight: $base-h2-font-weight;
+  }
+  h3 {
+    color: $base-h3-color;
+    font-weight: $base-h3-font-weight;
+  }
+  h4 {
+    color: $base-h4-color;
+    font-weight: $base-h4-font-weight;
+  }
+  h5 {
+    color: $base-h5-color;
+    font-weight: $base-h5-font-weight;
+  }
+  h6 {
+    color: $base-h6-color;
+    font-weight: $base-h6-font-weight;
+  }
+  
+  // Bold and Strong
+  b, strong, .strong { font-weight: 700; }
+  
+  // Italics
+  em, .em { font-style: italic; }
+  
+  // Horizontal Rules
+  hr, .hr {
+    height: 1px;
+    background: #eee;
+    border: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  // Code Blocks
+  code, .code, kbd, .kbd, pre, .pre, samp, .samp {
+    font-family: $base-code-font-family;
+    font-size: $base-code-font-size;
+    line-height: $base-code-line-height;
+    word-wrap: break-word;
+    color: $base-code-color;
+    background-color: $base-code-background-color;
+    font-weight: normal;
+    padding: 0;
+    white-space: pre-wrap;
+  }
+  pre, .pre {
+    padding: 10px 0;
+    overflow: auto;
+    border: 1px solid $base-code-border-color;
+  }
+  
+  // Blockquotes
+  blockquote,
+  .blockquote {
+    font-family: $base-blockquote-font-family;
+    font-style: italic;
+    margin: 20px 0;
+    p {
+      font-size: $base-blockquote-font-size;
+      line-height: $base-blockquote-line-height;
+      font-weight: $base-blockquote-font-weight;
+      margin-bottom: 20px;
+    }
+    cite {
+      font-size: $base-blockquote-font-size - 3;
+      line-height: $base-blockquote-font-size - 3;
+      font-weight: $base-blockquote-cite-font-weight;
+      font-style: normal;
+    }
+  }
