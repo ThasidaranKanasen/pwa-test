@@ -1,12 +1,12 @@
 const cacheName = 'cache-v2';
 
 const staticAssets = [
-    './',
-    '/index.html',
-    '/img/horse.svg',
-    '/css/main.css',
-    '/js/app.js',
-    '/manifest.json'
+    '/pwa-test',
+    'index.html',
+    'img/horse.svg',
+    'css/main.css',
+    'js/app.js',
+    'manifest.json'
 
   ];
 
