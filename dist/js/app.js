@@ -17,7 +17,7 @@ const app = {
     async function installServiceWorkerAsync() {
         if ('serviceWorker' in navigator) {
             try {
-                let serviceWorker = await navigator.serviceWorker.register('./service-worker.js')
+                let serviceWorker = await navigator.serviceWorker.register('./pwa-test/service-worker.js')
                 console.log(`Service worker registered ${serviceWorker}`)
             } catch (err) {
                 console.error(`Failed to register service worker: ${err}`)
@@ -83,7 +83,6 @@ const app = {
            console.log("Have Permission");
            return messaging.getToken();
         })
-
         .then(function(token){
          console.log(token);
          let status = document.getElementById('status');
