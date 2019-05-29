@@ -1,12 +1,12 @@
-const cacheName = 'cache-v3';
+const cacheName = 'cache-v4';
 
 const staticAssets = [
-    '/pwa-test',
-    'index.html',
-    'img/horse.svg',
-    'css/main.css',
-    'js/app.js',
-    'manifest.json'
+    '/',
+    './index.html',
+    './img/horse.svg',
+    './css/main.css',
+    './js/app.js',
+    './manifest.json'
 
   ];
 
