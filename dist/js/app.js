@@ -15,17 +15,20 @@ const app = {
         console.log('%c GTECH DEV ', 'color: white; background-color: #36007a', '🔥 Site Init');
 
     async function installServiceWorkerAsync() {
-        if ('serviceWorker' in navigator) {
-            try {
-                let serviceWorker = await navigator.serviceWorker.register('../service-worker.js')
-                console.log(`Service worker registered ${serviceWorker}`)
-            } catch (err) {
-                console.error(`Failed to register service worker: ${err}`)
-            }
-        }
+      
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/pwa-test/sw.js', {scope: '/pwa-test/'})
+      .then(function(registration) {
+        console.log('Registration successful, scope is:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service worker registration failed, error:', error);
+      });
+    }
     }
 
     installServiceWorkerAsync();
+    
 
     let deferredPrompt;
     const btnAdd = document.getElementById('install');
