@@ -25,7 +25,7 @@ const app = {
         }
     }
 
-    installServiceWorkerAsync();
+    //installServiceWorkerAsync();
 
     let deferredPrompt;
     const btnAdd = document.getElementById('install');
@@ -78,6 +78,79 @@ const app = {
         const messaging = firebase.messaging();
 
         messaging.requestPermission()
+
+        .then(function(){
+           console.log("Have Permission");
+           return messaging.getToken();
+        })
+
+        .then(function(token){
+         console.log(token);
+         let status = document.getElementById('status');
+         status.innerHTML = "<code>"+ token + "<code/>";
+        })
+
+        .catch(function(err){
+         console.log("Error") 
+        });
+
+        messaging.onTokenRefresh(function() {
+            messaging.getToken().then(function(refreshedToken) {
+            console.log('Token refreshed.');
+            console.log(token);
+            // Indicate that the new Instance ID token has not yet been sent to the
+            // app server.
+            //setTokenSentToServer(false);
+            // Send Instance ID token to app server.
+            //sendTokenToServer(refreshedToken);
+            // ...
+            }).catch(function(err) {
+            console.log('Unable to retrieve refreshed token ', err);
+            //showToken('Unable to retrieve refreshed token ', err);
+            });
+        });
+     
+        messaging.onMessage(function(payload){
+         console.log('onMessage', payload);
+
+         let notifyToast = document.getElementById('notification');
+         let title = notifyToast.querySelector('.title');
+         let body = notifyToast.querySelector('.body');
+         let link = document.createElement('a');
+         let message = document.createElement('span');
+         
+
+         let payloadObj = payload.notification;
+        
+         link.setAttribute("href", payload.click_action);
+         link.setAttribute("id", "slideInner");
+
+         message.innerHTML = payloadObj.body;
+         link.appendChild(message);
+        
+         title.innerHTML = payloadObj.title;
+         body.innerHTML = '';
+         body.appendChild(link)
+
+         
+        
+         console.log(payloadObj);
+
+         notifyToast.classList.add('flash');
+
+         notifyToast.addEventListener('click', (e)=>{
+            if ( event.target.classList.contains('dismiss') ) {
+
+                notifyToast.classList.remove('flash');
+            }
+
+         }, false );
+
+        });
+
+        
+
+        /* messaging.requestPermission()
         .then(function(){
            console.log("Have Permission");
            return messaging.getToken();
@@ -103,10 +176,27 @@ const app = {
                 //setTokenSentToServer(false);
               });
 
+              // Callback fired if Instance ID token is updated.
+            messaging.onTokenRefresh(function() {
+                messaging.getToken().then(function(refreshedToken) {
+                console.log('Token refreshed.');
+                console.log(currentToken);
+                // Indicate that the new Instance ID token has not yet been sent to the
+                // app server.
+                //setTokenSentToServer(false);
+                // Send Instance ID token to app server.
+                //sendTokenToServer(refreshedToken);
+                // ...
+                }).catch(function(err) {
+                console.log('Unable to retrieve refreshed token ', err);
+                //showToken('Unable to retrieve refreshed token ', err);
+                });
+            });
+
         })
         .catch(function(err){
             console.log("Error") 
-        });
+        }); */
 
 
     }
