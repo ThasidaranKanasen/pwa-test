@@ -1,0 +1,63 @@
+// BLOCKS
+
+#app{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh
+}
+
+header{
+    background: $purple-blue;
+    padding: 2em 0;
+
+    .title{
+        display: inline-block;
+        
+
+        .brand{
+            display: inline-block;
+            vertical-align: middle;
+
+            img{
+                width:100%;
+                height:auto;
+                max-width: 50px;
+            }
+        }
+
+        .txt{
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 1em;
+        }
+    }
+}
+
+footer{
+    background: $dark;
+    padding: 1em 0;
+
+    .copyright small{
+        font-size: 0.8rem;
+    }
+}
+
+main{
+    background: $white;
+    flex:1;
+    padding: 2em 0;
+}
+
+.notification{
+
+    button{
+        background: $sunshine;
+        border: none;
+        border-radius: 0;
+        overflow: visible;
+        text-transform: none;
+        cursor: pointer;
+        padding: .3em .5em;
+        margin-left:.5em;
+    }
+}
