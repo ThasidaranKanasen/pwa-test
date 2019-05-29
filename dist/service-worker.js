@@ -1,3 +1,4 @@
+
 /*
  * @license
  * Your First PWA Codelab (https://g.co/codelabs/pwa)
@@ -18,15 +19,15 @@
 'use strict';
 
 // CODELAB: Update cache names any time any of the cached files change.
-const CACHE_NAME = 'cache-v2';
+const CACHE_NAME = 'static-cache-v6';
 // CODELAB: Add list of files to cache here.
 const FILES_TO_CACHE = [
   '/',
-  '/index.html',
-  '/img/horse.svg',
-  '/css/main.css',
-  '/js/app.js',
-  '/manifest.json'
+  './index.html',
+  './img/horse.svg',
+  './css/main.css',
+  './js/app.js',
+  './manifest.json'
 ];
 
 self.addEventListener('install', (evt) => {
