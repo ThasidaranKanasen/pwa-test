@@ -1699,12 +1699,21 @@ main {
   flex: 1;
   padding: 2em 0; }
 
-.notification button {
+button {
   background: #ffc914;
   border: none;
   border-radius: 0;
   overflow: visible;
   text-transform: none;
   cursor: pointer;
-  padding: .3em .5em;
-  margin-left: .5em; }
+  padding: .5em 1em;
+  text-transform: uppercase;
+  display: none; }
+  button:hover {
+    background: crimson; }
+  button:disabled {
+    background: #2ecc71;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }

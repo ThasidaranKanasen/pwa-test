@@ -48,16 +48,24 @@ main{
     padding: 2em 0;
 }
 
-.notification{
 
-    button{
-        background: $sunshine;
-        border: none;
-        border-radius: 0;
-        overflow: visible;
-        text-transform: none;
-        cursor: pointer;
-        padding: .3em .5em;
-        margin-left:.5em;
+button{
+    background: $sunshine;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    text-transform: none;
+    cursor: pointer;
+    padding: .5em 1em;
+    text-transform: uppercase;
+    display: none;
+
+    &:hover{
+        background: crimson;
+    }
+
+    &:disabled{
+        background: $green;
+        user-select: none;
     }
 }
