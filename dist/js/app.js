@@ -14,21 +14,20 @@ const app = {
     init: function(){
         console.log('%c GTECH DEV ', 'color: white; background-color: #36007a', '🔥 Site Init');
 
-    async function installServiceWorkerAsync() {
+        async function installServiceWorkerAsync() {
       
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/pwa-test/sw.js', {scope: '/pwa-test/'})
-      .then(function(registration) {
-        console.log('Registration successful, scope is:', registration.scope);
-      })
-      .catch(function(error) {
-        console.log('Service worker registration failed, error:', error);
-      });
-    }
-    }
-
-    installServiceWorkerAsync();
-    
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+            .then(function(registration) {
+              console.log('Registration successful, scope is:', registration.scope);
+            })
+            .catch(function(error) {
+              console.log('Service worker registration failed, error:', error);
+            });
+          }
+          }
+      
+          installServiceWorkerAsync();
 
     let deferredPrompt;
     const btnAdd = document.getElementById('install');
@@ -81,7 +80,6 @@ const app = {
         const messaging = firebase.messaging();
 
         messaging.requestPermission()
-
         .then(function(){
            console.log("Have Permission");
            return messaging.getToken();
@@ -151,55 +149,6 @@ const app = {
         });
 
         
-
-        /* messaging.requestPermission()
-        .then(function(){
-           console.log("Have Permission");
-           return messaging.getToken();
-        })
-        .then(function(token){
-            
-            messaging.getToken().then(function(currentToken) {
-                if (currentToken) {
-                  //sendTokenToServer(currentToken);
-                  //updateUIForPushEnabled(currentToken);
-
-                  console.log(currentToken);
-                } else {
-                  // Show permission request.
-                  console.log('No Instance ID token available. Request permission to generate one.');
-                  // Show permission UI.
-                  //updateUIForPushPermissionRequired();
-                  //setTokenSentToServer(false);
-                }
-              }).catch(function(err) {
-                console.log('An error occurred while retrieving token. ', err);
-                //showToken('Error retrieving Instance ID token. ', err);
-                //setTokenSentToServer(false);
-              });
-
-              // Callback fired if Instance ID token is updated.
-            messaging.onTokenRefresh(function() {
-                messaging.getToken().then(function(refreshedToken) {
-                console.log('Token refreshed.');
-                console.log(currentToken);
-                // Indicate that the new Instance ID token has not yet been sent to the
-                // app server.
-                //setTokenSentToServer(false);
-                // Send Instance ID token to app server.
-                //sendTokenToServer(refreshedToken);
-                // ...
-                }).catch(function(err) {
-                console.log('Unable to retrieve refreshed token ', err);
-                //showToken('Unable to retrieve refreshed token ', err);
-                });
-            });
-
-        })
-        .catch(function(err){
-            console.log("Error") 
-        }); */
-
 
     }
 }

@@ -1,3 +1,4 @@
+
 const cacheName = 'cache-v6';
 
 const staticAssets = [
